@@ -10,18 +10,27 @@ public:
 
     void makeExist()
     {
-        exist=true;
+        exist = true;
     }
-    void checkExistance(int neighboursAmount)
+        void makeNotExist()
+    {
+        exist = false;
+    }
+    void changeExistance()
+    {
+        exist = !exist;
+    }
+    bool checkExistance(int neighboursAmount)
     {
         if ((exist == false) && (neighboursAmount == 3))
         {
-            exist = true;
+            return true;
         }
         else if ((exist == true) && ((neighboursAmount == 2) || (neighboursAmount == 3)))
         {
-            exist = false;
+            return false;
         }
+        else return exist;
     }
     bool showExistance()
     {
